@@ -1,4 +1,5 @@
 # chatbox
+
 Simple chat that works between browser tabs
 
 Implemented using React, this is a very simple CHAT web application that runs exclusively in the browser.
@@ -16,6 +17,7 @@ Here are the main use cases:
 - Messages will appear from bottom to top in the Messages'List.
 
 Extra ✨ notes:
+
 - Uses modern browser capabilities to persist the state of the application by allowing the page to be refreshed without losing data. Users are able to re-join the conversation by re-using a previously created “login session” (each tab/user is asked to join the first time only)
 - When the _ArrowUp_ is pressed in a TextInput, that input is filled with the last message sent by that user (if it exists), and when _Enter_ is pressed again, that last message is replaced with the edited message.
 - Using CSS3 transitions, the text-color of every message added to the list is animated, starting from a "Color 1" when created and ending with a "Color 2" using a transition with a duration of 10 seconds.
