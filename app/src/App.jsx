@@ -18,7 +18,8 @@ const App = () => {
   };
 
   const sendMessage = (message) => {
-    const updatedMessages = [...messages, message];
+    const updatedMessages = [...messages];
+    updatedMessages.unshift(message);
     setMessages(updatedMessages);
     localStorage.setItem("messages", JSON.stringify(updatedMessages));
   };
