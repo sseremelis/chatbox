@@ -144,3 +144,10 @@ table {
   all: unset;
   cursor: pointer;
 }
+
+input,
+button {
+  font-size: 1em;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
