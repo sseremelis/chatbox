@@ -1,7 +1,13 @@
 .messages-list {
-  padding: 16px;
+  padding: 8px;
   height: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
+}
+
+.messages-list__empty-message {
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 24px;
 }

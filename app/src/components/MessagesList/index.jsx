@@ -4,9 +4,14 @@ import "./MessagesList.css";
 
 const MessagesList = ({ messages }) => (
   <div className="messages-list">
-    {messages.map((message, index) => (
-      <Message key={index} message={message} />
-    ))}
+    {!messages.length ? (
+      <div className="messages-list__empty-message">no messages yet!</div>
+    ) : (
+      messages.map((message, index) => (
+        // First message is the latest one
+        <Message key={index} message={message} />
+      ))
+    )}
   </div>
 );
 
