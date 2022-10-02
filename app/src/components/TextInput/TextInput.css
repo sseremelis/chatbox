@@ -10,20 +10,15 @@
 }
 
 .text-input__user {
-  display: flex;
-  align-items: center;
-  border-right: 2px solid black;
-  padding: 16px;
-  background: var(--teal);
-  border-bottom-left-radius: 14px;
+  display: none;
 }
 
 .text-input__input {
   flex: 1;
-  max-width: 80%;
   background: white;
   border: 0;
   padding: 16px;
+  border-bottom-left-radius: 14px;
 }
 
 .text-input__button {
@@ -43,4 +38,15 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+}
+
+@media (min-width: 734px) {
+  .text-input__user {
+    display: flex;
+    align-items: center;
+    border-right: 2px solid black;
+    padding: 16px;
+    background: var(--teal);
+    border-bottom-left-radius: 14px;
+  }
 }
