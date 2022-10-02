@@ -1,0 +1,20 @@
+.message + .message {
+  margin-top: 32px;
+}
+
+.message--right {
+  text-align: right;
+}
+
+.message__info {
+  font-size: 1rem;
+}
+
+.message__time {
+  color: var(--pink);
+  margin-right: 8px;
+}
+
+.message__username {
+  color: var(--blue);
+}
