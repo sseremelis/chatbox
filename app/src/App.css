@@ -1,0 +1,8 @@
+h1 {
+  height: 50px;
+  background: black;
+  display: block;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
