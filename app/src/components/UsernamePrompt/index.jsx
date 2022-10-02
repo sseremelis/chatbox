@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../userContext";
+import "./UsernamePrompt.css";
 
 const UsernamePrompt = () => {
   const [name, setName] = useState("");
@@ -10,9 +11,14 @@ const UsernamePrompt = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      What username do you want to use?
-      <input type="text" onChange={(e) => setName(e.target.value)}></input>
+    <form class="username-prompt" onSubmit={handleSubmit}>
+      what's your username ?
+      <input
+        className="username-prompt__input"
+        placeholder="don't be shy"
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      ></input>
     </form>
   );
 };
