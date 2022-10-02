@@ -1,0 +1,33 @@
+.text-input {
+  border-top: 2px solid black;
+  background: var(--teal);
+}
+
+.text-input__form {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-input__user {
+  display: flex;
+  align-items: center;
+  border-right: 2px solid black;
+  padding: 16px;
+}
+
+.text-input__input {
+  flex: 1;
+  max-width: 80%;
+  background: white;
+  border: 0;
+  padding: 16px;
+}
+
+.text-input__button {
+  background: var(--pink);
+  border: 0;
+  border-left: 2px solid black;
+  width: 50px;
+  cursor: pointer;
+}
