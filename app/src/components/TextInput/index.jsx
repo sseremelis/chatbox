@@ -7,6 +7,10 @@ const TextInput = ({ sendMessage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!text) {
+      alert("Add some text to your message");
+      return;
+    }
     sendMessage({ username: user, timestamp: new Date(), text });
     setText("");
   };
