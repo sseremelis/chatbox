@@ -5,11 +5,12 @@ import "./TextInput.css";
 const TextInput = ({ sendMessage }) => {
   const { user } = useContext(UserContext);
   const [text, setText] = useState("");
+  const [alert, setAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text) {
-      alert("Add some text to your message");
+      setAlert(true);
       return;
     }
     sendMessage({ username: user, timestamp: new Date(), text });
@@ -24,11 +25,19 @@ const TextInput = ({ sendMessage }) => {
           placeholder="your message goes here ;)"
           type="text"
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => {
+            setAlert(false);
+            setText(e.target.value);
+          }}
         />
         <button className="text-input__button" type="submit">
           {">"}
         </button>
+        {alert && (
+          <div className="text-input__alert">
+            {"you can't send an empty message >_<"}
+          </div>
+        )}
       </form>
     </div>
   );
