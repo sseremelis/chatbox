@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "../../userContext";
+import "./Message.css";
 
 const Message = ({ message: { username, timestamp, text } }) => {
   const { user } = useContext(UserContext);
@@ -9,9 +10,10 @@ const Message = ({ message: { username, timestamp, text } }) => {
 
   const isUserMessage = username === user;
   return (
-    <div className={isUserMessage ? "right-message" : ""}>
-      <div>
-        {formattedTimestamp} {username}
+    <div className={`message ${isUserMessage ? "message--right" : ""}`}>
+      <div className="message__info">
+        <span className="message__time">{formattedTimestamp}</span>
+        <span className="message__username">{username}</span>
       </div>
       {text}
     </div>
