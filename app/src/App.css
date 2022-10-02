@@ -1,3 +1,15 @@
+main {
+  width: 65%;
+  max-width: 650px;
+  height: 65%;
+  border: 2px solid black;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+
 h1 {
   height: 50px;
   background: black;
