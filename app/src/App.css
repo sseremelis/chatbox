@@ -7,7 +7,6 @@ main {
   display: flex;
   flex-direction: column;
   background-color: white;
-  overflow: hidden;
 }
 
 h1 {
@@ -17,4 +16,6 @@ h1 {
   color: white;
   padding: 16px;
   text-align: center;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }

@@ -1,6 +1,6 @@
 .text-input {
   border-top: 2px solid black;
-  background: var(--teal);
+  position: relative;
 }
 
 .text-input__form {
@@ -14,6 +14,8 @@
   align-items: center;
   border-right: 2px solid black;
   padding: 16px;
+  background: var(--teal);
+  border-bottom-left-radius: 14px;
 }
 
 .text-input__input {
@@ -30,4 +32,15 @@
   border-left: 2px solid black;
   width: 50px;
   cursor: pointer;
+  border-bottom-right-radius: 14px;
+}
+
+.text-input__alert {
+  position: absolute;
+  bottom: -48px;
+  padding: 8px;
+  background: var(--orange);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
