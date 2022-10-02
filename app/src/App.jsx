@@ -26,6 +26,7 @@ const App = () => {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
+      <h1>Chat.exe</h1>
       {user ? (
         <Fragment>
           <MessagesList messages={messages} />
