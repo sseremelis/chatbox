@@ -6,7 +6,9 @@ const Message = ({ message: { username, timestamp, text }, highlighted }) => {
   const { user } = useContext(UserContext);
 
   const time = new Date(timestamp);
-  const formattedTimestamp = `${time.getHours()}:${time.getMinutes()}`;
+  const formattedHours = time.getHours().toString().padStart(2, "0");
+  const formattedMinutes = time.getMinutes().toString().padStart(2, "0");
+  const formattedTimestamp = `${formattedHours}:${formattedMinutes}`;
 
   const isUserMessage = username === user;
 
