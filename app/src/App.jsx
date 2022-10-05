@@ -5,12 +5,13 @@ import UserContext from "./userContext";
 import UsernamePrompt from "./components/UsernamePrompt";
 import TextInput from "./components/TextInput";
 
-const initialMessages = localStorage.getItem("messages");
+const storedMessages = localStorage.getItem("messages");
+const initialMessages = storedMessages ? JSON.parse(storedMessages) : [];
+const initialUser = sessionStorage.getItem("user");
+
 const App = () => {
-  const [user, setUserState] = useState(sessionStorage.getItem("user"));
-  const [messages, setMessages] = useState(
-    initialMessages ? JSON.parse(initialMessages) : []
-  );
+  const [user, setUserState] = useState(initialUser);
+  const [messages, setMessages] = useState(initialMessages);
 
   const setUser = (user) => {
     sessionStorage.setItem("user", user);
