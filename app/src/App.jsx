@@ -32,9 +32,13 @@ const App = () => {
       id: `${message.username}_${message.timestamp.getTime()}`,
     };
     updatedMessages.unshift(messageWithId);
-    setMessages(updatedMessages);
+    persistMessages(updatedMessages);
+  };
+
+  const persistMessages = (messages) => {
+    setMessages(messages);
     setLastUserMessage(messages[0]);
-    localStorage.setItem("messages", JSON.stringify(updatedMessages));
+    localStorage.setItem("messages", JSON.stringify(messages));
   };
 
   return (
