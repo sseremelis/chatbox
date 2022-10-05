@@ -1,9 +1,17 @@
+.message {
+  padding: 8px;
+}
+
 .message + .message {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .message--right {
   text-align: right;
+}
+
+.message--highlighted {
+  animation: backgroundFade 10s forwards;
 }
 
 .message__info {
@@ -17,4 +25,13 @@
 
 .message__username {
   color: var(--blue);
+}
+
+@keyframes backgroundFade {
+  from {
+    background-color: var(--yellow);
+  }
+  to {
+    background-color: transparent;
+  }
 }
