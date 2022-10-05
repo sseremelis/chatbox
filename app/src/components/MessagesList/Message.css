@@ -27,6 +27,20 @@
   color: var(--blue);
 }
 
+.message__delete {
+  background-color: var(--orange);
+  padding: 4px;
+  opacity: 0;
+  pointer-events: none;
+  margin-right: 8px;
+}
+
+.message:hover .message__delete {
+  opacity: 1;
+  pointer-events: initial;
+  cursor: pointer;
+}
+
 @keyframes backgroundFade {
   from {
     background-color: var(--yellow);

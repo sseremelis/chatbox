@@ -44,6 +44,15 @@ const App = () => {
     persistMessages(updatedMessages);
   };
 
+  const deleteMessage = (id) => {
+    const updatedMessages = [...messages];
+    const messageIndex = updatedMessages.findIndex(
+      ({ id: messageId }) => messageId === id
+    );
+    updatedMessages.splice(messageIndex, 1);
+    persistMessages(updatedMessages);
+  };
+
   const persistMessages = (messages) => {
     setMessages(messages);
     setLastUserMessage(messages[0]);
@@ -55,7 +64,7 @@ const App = () => {
       <h1>chat.exe</h1>
       {user ? (
         <Fragment>
-          <MessagesList messages={messages} />
+          <MessagesList messages={messages} deleteMessage={deleteMessage} />
           <TextInput
             sendMessage={sendMessage}
             editMessage={editMessage}
