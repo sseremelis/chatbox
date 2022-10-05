@@ -19,7 +19,10 @@ const App = () => {
 
   const sendMessage = (message) => {
     const updatedMessages = [...messages];
-    updatedMessages.unshift(message);
+    updatedMessages.unshift({
+      ...message,
+      id: `${message.username}_${message.timestamp.getTime()}`,
+    });
     setMessages(updatedMessages);
     localStorage.setItem("messages", JSON.stringify(updatedMessages));
   };

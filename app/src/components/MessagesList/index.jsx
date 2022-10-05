@@ -9,7 +9,7 @@ const MessagesList = ({ messages }) => (
     ) : (
       messages.map((message, index) => (
         // First message is the latest one
-        <Message key={index} message={message} />
+        <Message key={message.id} message={message} highlighted={index === 0} />
       ))
     )}
   </div>
