@@ -8,10 +8,17 @@ import TextInput from "./components/TextInput";
 const storedMessages = localStorage.getItem("messages");
 const initialMessages = storedMessages ? JSON.parse(storedMessages) : [];
 const initialUser = sessionStorage.getItem("user");
+const initialLastUserMessage = initialMessages.find(
+  ({ username }) => username === initialUser
+);
 
 const App = () => {
   const [user, setUserState] = useState(initialUser);
   const [messages, setMessages] = useState(initialMessages);
+
+  const [lastUserMessage, setLastUserMessage] = useState(
+    initialLastUserMessage
+  );
 
   const setUser = (user) => {
     sessionStorage.setItem("user", user);
@@ -20,11 +27,13 @@ const App = () => {
 
   const sendMessage = (message) => {
     const updatedMessages = [...messages];
-    updatedMessages.unshift({
+    const messageWithId = {
       ...message,
       id: `${message.username}_${message.timestamp.getTime()}`,
-    });
+    };
+    updatedMessages.unshift(messageWithId);
     setMessages(updatedMessages);
+    setLastUserMessage(messages[0]);
     localStorage.setItem("messages", JSON.stringify(updatedMessages));
   };
 
