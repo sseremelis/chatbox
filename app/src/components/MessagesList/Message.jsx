@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import UserContext from "../../userContext";
 import "./Message.css";
 
-const Message = ({ message: { username, timestamp, text }, highlighted }) => {
+const Message = ({
+  message: { username, timestamp, text, id },
+  highlighted,
+  deleteMessage,
+}) => {
   const { user } = useContext(UserContext);
 
   const time = new Date(timestamp);
@@ -20,6 +24,15 @@ const Message = ({ message: { username, timestamp, text }, highlighted }) => {
     `}
     >
       <div className="message__info">
+        {isUserMessage && (
+          <button
+            type="button"
+            className="button--reset message__delete"
+            onClick={() => deleteMessage(id)}
+          >
+            Delete message
+          </button>
+        )}
         <span className="message__time">{formattedTimestamp}</span>
         <span className="message__username">{username}</span>
       </div>
