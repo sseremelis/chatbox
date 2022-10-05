@@ -35,6 +35,15 @@ const App = () => {
     persistMessages(updatedMessages);
   };
 
+  const editMessage = ({ text, id }) => {
+    const updatedMessages = [...messages];
+    const messageIndex = updatedMessages.findIndex(
+      ({ id: messageId }) => messageId === id
+    );
+    updatedMessages[messageIndex].text = text;
+    persistMessages(updatedMessages);
+  };
+
   const persistMessages = (messages) => {
     setMessages(messages);
     setLastUserMessage(messages[0]);
@@ -47,7 +56,11 @@ const App = () => {
       {user ? (
         <Fragment>
           <MessagesList messages={messages} />
-          <TextInput sendMessage={sendMessage} />
+          <TextInput
+            sendMessage={sendMessage}
+            editMessage={editMessage}
+            lastUserMessage={lastUserMessage}
+          />
         </Fragment>
       ) : (
         <UsernamePrompt />
