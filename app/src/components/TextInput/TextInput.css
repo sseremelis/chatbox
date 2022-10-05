@@ -49,4 +49,8 @@
     background: var(--teal);
     border-bottom-left-radius: 14px;
   }
+
+  .text-input__input {
+    border-radius: 0;
+  }
 }
