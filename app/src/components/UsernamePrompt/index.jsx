@@ -11,13 +11,14 @@ const UsernamePrompt = () => {
   };
 
   return (
-    <form class="username-prompt" onSubmit={handleSubmit}>
+    <form className="username-prompt" onSubmit={handleSubmit}>
       what's your username ?
       <input
         className="username-prompt__input"
         placeholder="don't be shy"
         type="text"
         onChange={(e) => setName(e.target.value)}
+        data-testid="usernamePrompt-input"
       ></input>
     </form>
   );
