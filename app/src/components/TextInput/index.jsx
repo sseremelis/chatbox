@@ -48,8 +48,13 @@ const TextInput = ({ sendMessage, editMessage, lastUserMessage }) => {
             setText(e.target.value);
           }}
           onKeyUp={handleKeyUp}
+          data-testid="text-input"
         />
-        <button className="text-input__button" type="submit">
+        <button
+          className="text-input__button"
+          type="submit"
+          data-testid="text-input-button"
+        >
           {">"}
         </button>
         {alert && (
