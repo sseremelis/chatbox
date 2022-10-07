@@ -1,6 +1,6 @@
 import React from "react";
 import Message from "./Message";
-import "./MessagesList.css";
+import "./index.css";
 
 const MessagesList = ({ messages, deleteMessage }) => (
   <div className="messages-list">

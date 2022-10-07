@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import UserContext from "../../userContext";
-import "./TextInput.css";
+import "./index.css";
 
 const TextInput = ({ sendMessage, editMessage, lastUserMessage }) => {
   const { user } = useContext(UserContext);
