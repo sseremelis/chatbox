@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../userContext";
-import "./UsernamePrompt.css";
+import "./index.css";
 
 const UsernamePrompt = () => {
   const [name, setName] = useState("");
