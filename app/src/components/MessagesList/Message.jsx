@@ -22,6 +22,7 @@ const Message = ({
         ${isUserMessage ? "message--right" : ""}
         ${highlighted && !isUserMessage ? "message--highlighted" : ""}
     `}
+      data-testid="message"
     >
       <div className="message__info">
         {isUserMessage && (
